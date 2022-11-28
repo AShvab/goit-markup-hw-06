@@ -792,6 +792,12 @@ background-color: rgba(47, 48, 58, 0.8);
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  transition: fill var(--tra);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--accent-color);
 }
 
 .is-hidden {
@@ -801,6 +807,7 @@ background-color: rgba(47, 48, 58, 0.8);
 }
 
 /* ---------modal-input-------------- */
+
 .modal-title {
   font-weight: 700;
   font-size: 20px;
@@ -808,22 +815,26 @@ background-color: rgba(47, 48, 58, 0.8);
   letter-spacing: 0.03em;
   color: var(--title-text-color);
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
 }
 
 .modal-field {
   margin-top: 10px;
   }
 
-.modal-field:first-child {
+.modal-field:first-of-type {
+  margin-top: 0;
+}
+.modal-field:nth-of-type(4n){
+  margin-bottom: 20px;
+}
+
+.modal-field:last-of-type {
   margin-top: 0;
 }
 
-
-
 .input-wrapper {
-  position: relative;
-  
+  position: relative;  
 }
 
 .modal-input {
@@ -882,8 +893,61 @@ background-color: rgba(47, 48, 58, 0.8);
   color: rgba(117, 117, 117, 0.5);
   font-size: 12px;
   line-height: 1.17;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.01em;  
+}
+
+.checkbox-wrapper {
+display: flex;
+justify-content: center;
+}
+
+.check-text {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  /* margin-top: 20px; */
   
+}
+
+.check-text span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 2px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+}
+
+.modal-check:checked + .check-text span {
+  background-color: var(--accent-color);
+  border: none;
+  fill: var(--primary-background-color);
+}
+
+.policy-link {
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  align-items: center;
+  color: var(--accent-color);
+  display: block;
+  margin-left: 3px;
+  position: relative;
+}
+
+.policy-link::after{
+  content:'';
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-color);
 }
 
 .modal-btn {
@@ -900,6 +964,8 @@ background-color: rgba(47, 48, 58, 0.8);
   border-radius: 4px;
   display: flex;
   margin: 0 auto;
+  margin-top: 30px;
+  transition: box-shadow var(--tra) ;
   
 }
 
