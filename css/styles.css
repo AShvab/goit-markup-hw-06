@@ -929,6 +929,13 @@ justify-content: center;
   fill: var(--primary-background-color);
 }
 
+.modal-check:focus + .check-text span {
+ 
+  border: 2px solid var(--accent-color);
+ 
+}
+
+
 .policy-link {
   font-size: 14px;
   line-height: 1.71;
